@@ -4,7 +4,7 @@ import MusicSelect from "../components/MusicSelect";
 
 const MusicBox = () => {
 
-    const [genders, setGenders] = useState([
+    const [genres, setGenres] = useState([
         {
             name: "All", 
             url: "https://itunes.apple.com/gb/rss/topsongs/limit=20/json"
@@ -35,13 +35,13 @@ const MusicBox = () => {
         .then(songs => setSongs(songs.feed.entry))
     }
 
-    const onGenderSelected = function(gender) {
-        getSongs(gender.url)
+    const onGenreSelected = function(genre) {
+        getSongs(genre.url)
     }
 
     return (
         <div className="main-container">
-            <MusicSelect onGenderSelected= {onGenderSelected} genders={genders}/>
+            <MusicSelect onGenreSelected= {onGenreSelected} genres={genres}/>
             <MusicList songs={songs}/>
 
         </div>

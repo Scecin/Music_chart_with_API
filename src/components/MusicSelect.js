@@ -1,20 +1,20 @@
 import React from "react";
 
-const MusicSelect = ({onGenderSelected, genders}) => {
+const MusicSelect = ({onGenreSelected, genres}) => {
 
     const handleChange = ((event) => {
-        const choseGender = genders[event.target.value]
-        onGenderSelected(choseGender)
+        const choseGenre = genres[event.target.value]
+        onGenreSelected(choseGenre)
     });
 
-    const genderOptions = genders.map((gender, index)=> {
-        return <option value={index} key={index}>{gender.name}</option>
+    const genreOptions = genres.map((genre, index)=> {
+        return <option value={index} key={index}>{genre.name}</option>
     })
 
     return (
         <select defaultValue="" onChange={handleChange}>
-            <option value="" selected>Chose a Gender</option>
-            {genderOptions}
+            <option value="" selected>Chose a Genre</option>
+            {genreOptions}
         </select>
     )
 }
